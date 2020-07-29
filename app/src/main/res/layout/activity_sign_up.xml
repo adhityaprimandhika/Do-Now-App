@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent_2"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="98dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Username"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="64dp"/>
+
+    <EditText
+        android:id="@+id/et_username_sign_up"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_bg"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:padding="10dp"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="64dp"/>
+
+    <EditText
+        android:id="@+id/et_email_sign_up"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_bg"
+        android:fontFamily="@font/montserrat_regular"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginBottom="27dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="64dp"/>
+
+    <EditText
+        android:id="@+id/et_password_sign_up"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_bg"
+        android:fontFamily="@font/montserrat_regular"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginBottom="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="138dp"
+        android:layout_height="37dp"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="SIGN UP"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center"
+        android:layout_marginLeft="111dp"
+        android:layout_marginRight="111dp"/>
+</LinearLayout>
