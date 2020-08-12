@@ -18,14 +18,14 @@ class Onboard_3Activity : AppCompatActivity(), View.OnClickListener {
 
         val btnNextOnboard : Button = findViewById(R.id.btn_next_onboard)
         btnNextOnboard.setOnClickListener(this)
-        val btnBackOnboard : Button = findViewById(R.id.btn_back_onboard)
+        val btnBackOnboard: Button = findViewById(R.id.btn_back_onboard)
         btnBackOnboard.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
+    override fun onClick(v: View) {
+        when(v.id) {
             R.id.btn_next_onboard -> {
-                var nextIntent = Intent(this@Onboard_3Activity, MainActivity::class.java)
+                var nextIntent = Intent(this@Onboard_3Activity, LoginActivity::class.java)
                 startActivity(nextIntent)
             }
             R.id.btn_back_onboard -> {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_gravity="center">
     <TableLayout
         android:id="@+id/tl_onboard"
         android:layout_width="match_parent"
@@ -15,9 +15,11 @@
         android:background="@drawable/onboard_bg"
         android:elevation="20dp"
         android:outlineSpotShadowColor="@color/black">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="260dp"
@@ -29,18 +31,19 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/black"
                 android:textSize="36sp"
-                tools:text="Make your task organized"/>
+                tools:text="Make your task organized" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/img_onboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                tools:src="@drawable/task"/>
+                tools:src="@drawable/task" />
         </TableRow>
     </TableLayout>
 

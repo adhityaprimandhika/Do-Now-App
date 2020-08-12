@@ -13,7 +13,7 @@ class SignUpActivity : AppCompatActivity() {
 
         var btnSignUp : Button = findViewById(R.id.btn_sign_up)
         btnSignUp.setOnClickListener {
-            var onboardIntent = Intent(this@SignUpActivity, Onboard_1Activity::class.java)
+            var onboardIntent = Intent(this@SignUpActivity, MainActivity::class.java)
             startActivity(onboardIntent)
         }
     }
