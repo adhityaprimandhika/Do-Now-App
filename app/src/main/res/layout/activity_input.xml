@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/Theme.AppCompat.Light.NoActionBar"
+    android:background="@color/colorAccent_1">
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_back"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/main_bg"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/colorAccent_4"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+        <EditText
+            android:id="@+id/input_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/colorAccent_4"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:lines="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/colorAccent_4"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+        <EditText
+            android:id="@+id/input_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/colorAccent_4"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:lines="3"/>
+
+        <Button
+            android:id="@+id/btn_input"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_onboard"
+            android:layout_gravity="center"
+            android:layout_marginTop="220dp"
+            android:text="Add Task"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular"/>
+    </LinearLayout>
+</RelativeLayout>
