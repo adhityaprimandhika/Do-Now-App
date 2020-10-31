@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp"
     android:background="@drawable/task_bg"
     android:layout_marginBottom="16dp">
@@ -30,6 +30,23 @@
             tools:text="Description"
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_regular"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            android:maxLines="2"/>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_edit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_edit"/>
+
+    <ImageView
+        android:id="@+id/btn_delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_delete"/>
 </RelativeLayout>

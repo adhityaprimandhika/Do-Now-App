@@ -1,62 +1,64 @@
 package com.adhityaprimandhika.do_now
 
-import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+import com.adhityaprimandhika.do_now.DB.DoNowDatabase
+import com.adhityaprimandhika.do_now.model.Task
+import kotlinx.android.synthetic.main.activity_input.view.*
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-    lateinit var taskAdapter: TaskAdapter
-    private lateinit var rvTasks: RecyclerView
-    private var addTaskList: MutableList<Task> = ArrayList()
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnAdd: ImageView = findViewById(R.id.btn_add)
-        btnAdd.setOnClickListener(this)
-        rvTasks = findViewById(R.id.rv_tasks)
-        rvTasks.setHasFixedSize(true)
+        getTasksData()
 
-        initView()
-    }
-
-    fun initView() {
-        rvTasks.layoutManager = LinearLayoutManager(this)
-        taskAdapter = TaskAdapter(this)
-        rvTasks.adapter = taskAdapter
-    }
-
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.btn_add -> {
-                val dialog: AlertDialog.Builder = AlertDialog.Builder(this)
-                val view: View = layoutInflater.inflate(R.layout.activity_input_task, null)
-                val addTitle: EditText = view.findViewById(R.id.add_title)
-                val addDesc: EditText = view.findViewById(R.id.add_desc)
-                dialog.setView(view)
-                dialog.setPositiveButton("Add") {_: DialogInterface, _: Int ->
-                    if (addTitle.text.isNotEmpty() && addDesc.text.isNotEmpty()) {
-                        var title: String = addTitle.text.toString()
-                        var desc: String = addDesc.text.toString()
-                        addTaskList.add(Task("$title", "$desc"))
-                        taskAdapter.setTasks(addTaskList)
-                    }
-                }
-                dialog.setNegativeButton("Cancel") {_: DialogInterface, _: Int ->
-
-                }
-                dialog.show()
-            }
+        fab.setOnClickListener {
+            startActivity(Intent(this@MainActivity, InputActivity::class.java))
         }
+    }
+
+    private fun getTasksData(){
+        val database = DoNowDatabase.getDatabase(applicationContext)
+        val dao = database.getNoteDao()
+        val listTasks = arrayListOf<Task>()
+        listTasks.addAll(dao.getAll())
+        setupRecyclerView(listTasks)
+    }
+
+    private fun setupRecyclerView(listTasks: ArrayList<Task>){
+        rv_tasks.apply {
+            adapter = TaskAdapter(listTasks, object : TaskAdapter.TaskListener{
+                override fun OnItemClicked(task: Task) {
+                    val intent = Intent(this@MainActivity, InputActivity::class.java)
+                    intent.putExtra(InputActivity().INPUT_TASK_EXTRA, task)
+                    startActivity(intent)
+                }
+
+                override fun EditItem(task: Task) {
+                    val intent = Intent(this@MainActivity, InputActivity::class.java)
+                    intent.putExtra(InputActivity().INPUT_TASK_EXTRA, task)
+                    intent.putExtra(InputActivity().EXTRA, "Edit Task")
+                    startActivity(intent)
+                }
+
+                override fun DeleteItem(task: Task) {
+                    val intent = Intent(this@MainActivity, DeleteActivity::class.java)
+                    intent.putExtra(DeleteActivity().DELETE_TASK_EXTRA, task)
+                    startActivity(intent)
+                }
+            })
+
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getTasksData()
     }
 }

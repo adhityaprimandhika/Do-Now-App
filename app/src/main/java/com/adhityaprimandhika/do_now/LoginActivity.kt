@@ -3,11 +3,9 @@ package com.adhityaprimandhika.do_now
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
