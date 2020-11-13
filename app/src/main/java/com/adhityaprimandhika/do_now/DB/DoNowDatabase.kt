@@ -4,9 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.adhityaprimandhika.do_now.model.Account
 import com.adhityaprimandhika.do_now.model.Task
 
-@Database(entities = [Task::class], version = 1, exportSchema = false)
+@Database(entities = [Task::class, Account::class], version = 1, exportSchema = false)
 abstract class DoNowDatabase: RoomDatabase() {
 
     companion object {
@@ -19,7 +20,7 @@ abstract class DoNowDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DoNowDatabase::class.java,
-                    "task_db"
+                    "do_now_db"
                 )
                     .allowMainThreadQueries() //allows Room to executing task in main thread
                     .fallbackToDestructiveMigration() //allows Room to recreate database if no migrations found
@@ -31,5 +32,6 @@ abstract class DoNowDatabase: RoomDatabase() {
         }
     }
 
-    abstract fun getNoteDao() : TaskDao
+    abstract fun getTaskDao(): TaskDao
+    abstract fun getAccountDao(): AccountDao
 }

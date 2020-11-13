@@ -23,7 +23,7 @@ class DeleteActivity : AppCompatActivity() {
         setContentView(R.layout.activity_delete)
 
         database = DoNowDatabase.getDatabase(applicationContext)
-        dao = database.getNoteDao()
+        dao = database.getTaskDao()
         if (intent.getParcelableExtra<Task>(DELETE_TASK_EXTRA) != null) {
             task = intent.getParcelableExtra(DELETE_TASK_EXTRA)
         }

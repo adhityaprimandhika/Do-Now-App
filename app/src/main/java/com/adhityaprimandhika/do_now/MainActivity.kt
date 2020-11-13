@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(){
 
     private fun getTasksData(){
         val database = DoNowDatabase.getDatabase(applicationContext)
-        val dao = database.getNoteDao()
+        val dao = database.getTaskDao()
         val listTasks = arrayListOf<Task>()
         listTasks.addAll(dao.getAll())
         setupRecyclerView(listTasks)

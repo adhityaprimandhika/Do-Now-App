@@ -28,7 +28,7 @@ class InputActivity : AppCompatActivity() {
         var btnBack: ImageView = findViewById(R.id.btn_back)
 
         database = DoNowDatabase.getDatabase(applicationContext)
-        dao = database.getNoteDao()
+        dao = database.getTaskDao()
 
         if (intent.getParcelableExtra<Task>(INPUT_TASK_EXTRA) != null) {
             isUpdate = true
@@ -45,7 +45,7 @@ class InputActivity : AppCompatActivity() {
             val title = input_title.text.toString()
             val desc = input_desc.text.toString()
 
-            if (title.isEmpty() && desc.isEmpty()) {
+            if (title.isEmpty() || desc.isEmpty()) {
                 Toast.makeText(applicationContext, "Task cannot be empty", Toast.LENGTH_SHORT).show()
             }
             else {
