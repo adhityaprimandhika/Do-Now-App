@@ -32,7 +32,7 @@ class InputActivity : AppCompatActivity() {
 
         if (intent.getParcelableExtra<Task>(INPUT_TASK_EXTRA) != null) {
             isUpdate = true
-            task = intent.getParcelableExtra(INPUT_TASK_EXTRA)
+            task = intent.getParcelableExtra(INPUT_TASK_EXTRA)!!
             input_title.setText(task.title)
             input_desc.setText(task.desc)
         }

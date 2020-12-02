@@ -25,7 +25,7 @@ class DeleteActivity : AppCompatActivity() {
         database = DoNowDatabase.getDatabase(applicationContext)
         dao = database.getTaskDao()
         if (intent.getParcelableExtra<Task>(DELETE_TASK_EXTRA) != null) {
-            task = intent.getParcelableExtra(DELETE_TASK_EXTRA)
+            task = intent.getParcelableExtra(DELETE_TASK_EXTRA)!!
         }
         deleteTask(task)
 
